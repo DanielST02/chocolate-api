@@ -1,5 +1,5 @@
 import express from "express";
-import weatherRoute from "./routes/chocolateRoute.js";
+import chocolateRoute from "./routes/chocolateRoute.js";
 import cors from "cors";
 
 // We will create an express app
@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 // We define our first route
-app.use("/api/weather", weatherRoute);
+app.use("/api/chocolate", chocolateRoute);
 
 // Start the express server
 app.listen(PORT, () => {

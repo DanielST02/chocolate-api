@@ -1,69 +1,66 @@
 import { faker } from "@faker-js/faker";
-import { storeWeatherData } from "../helpers/helpers.js";
+import { storeChocolateData } from "../helpers/helpers.js";
 
-export const generateLondonWeatherData = (): WeatherData => {
-  // Generate random weather data
-  const generatedWeatherData = {
-    city: "London",
-    temperature: faker.number.int({ min: -15, max: 30 }),
-    Day1: faker.number.int({ min: -15, max: 30 }),
-    Day2: faker.number.int({ min: -15, max: 30 }),
-    Day3: faker.number.int({ min: -15, max: 30 }),
-    humidity: faker.number.int({ min: 79, max: 86 }),
-    wind: faker.number.int({ min: 2, max: 78 }),
-    rain: faker.number.int({ min: 65, max: 75 }),
+export const generateCadburyChocolateData = (): ChocolateData => {
+  // Generate random chocolate data
+  const generatedChocolateData: ChocolateData = {
+    chocolate: "Cadbury",
+    calories: faker.number.int({ min: 100, max: 500 }),
+    sugar: faker.number.int({ min: 10, max: 40 }),
+    price: faker.number.int({ min: 1, max: 9 }),
+    rating: faker.number.int({ min: 1, max: 5 }),
   };
 
-  storeWeatherData(generatedWeatherData).catch(console.error);
+  storeChocolateData(generatedChocolateData).catch(console.error);
 
-  // Return weather data
-  return generatedWeatherData;
+  // Return chocolate data
+  return generatedChocolateData;
 };
 
-export const generateDublinWeatherData = (): WeatherData => {
-  // Generate random weather data
-  const generatedWeatherData: WeatherData = {
-    city: "Dublin",
-    temperature: faker.number.int({ min: -15, max: 30 }),
-    humidity: faker.number.int({ min: 79, max: 86 }),
-    wind: faker.number.int({ min: 2, max: 78 }),
-    rain: faker.number.int({ min: 65, max: 75 }),
+export const generateMarsChocolateData = (): ChocolateData => {
+  // Generate random chocolate data
+  const generatedChocolateData: ChocolateData = {
+    chocolate: "Mars",
+    calories: faker.number.int({ min: 100, max: 500 }),
+    sugar: faker.number.int({ min: 10, max: 40 }),
+    price: faker.number.int({ min: 1, max: 9 }),
+    rating: faker.number.int({ min: 1, max: 5 }),
   };
 
-  storeWeatherData(generatedWeatherData).catch(console.error);
+  storeChocolateData(generatedChocolateData).catch(console.error);
 
-  // Return weather data
-  return generatedWeatherData;
+  // Return chocolate data
+  return generatedChocolateData;
 };
 
-export const generateParisWeatherData = (): WeatherData => {
-  // Generate random weather data
-  const generatedWeatherData: WeatherData = {
-    city: "Paris",
-    temperature: faker.number.int({ min: -15, max: 30 }),
-    humidity: faker.number.int({ min: 79, max: 86 }),
-    wind: faker.number.int({ min: 2, max: 78 }),
-    rain: faker.number.int({ min: 65, max: 75 }),
+export const generateGalaxyChocolateData = (): ChocolateData => {
+  // Generate random chocolate data
+  const generatedChocolateData: ChocolateData = {
+    chocolate: "Galaxy",
+    calories: faker.number.int({ min: 100, max: 500 }),
+    sugar: faker.number.int({ min: 10, max: 40 }),
+    price: faker.number.int({ min: 1, max: 9 }),
+    rating: faker.number.int({ min: 1, max: 5 }),
   };
 
-  storeWeatherData(generatedWeatherData).catch(console.error);
+  storeChocolateData(generatedChocolateData).catch(console.error);
 
-  // Return weather data
-  return generatedWeatherData;
+  // Return chocolate data
+  return generatedChocolateData;
 };
 
-export const generateMadridWeatherData = (): WeatherData => {
-  // Generate random weather data
-  const generatedWeatherData: WeatherData = {
-    city: "Madrid",
-    temperature: faker.number.int({ min: -15, max: 30 }),
-    humidity: faker.number.int({ min: 79, max: 86 }),
-    wind: faker.number.int({ min: 2, max: 78 }),
-    rain: faker.number.int({ min: 65, max: 75 }),
+export const generateLindtChocolateData = (): ChocolateData => {
+  // Generate random chocolate data
+  const generatedChocolateData: ChocolateData = {
+    chocolate: "Lindt",
+    calories: faker.number.int({ min: 100, max: 500 }),
+    sugar: faker.number.int({ min: 10, max: 40 }),
+    price: faker.number.int({ min: 1, max: 9 }),
+    rating: faker.number.int({ min: 1, max: 5 }),
   };
 
-  storeWeatherData(generatedWeatherData).catch(console.error);
+  storeChocolateData(generatedChocolateData).catch(console.error);
 
-  // Return weather data
-  return generatedWeatherData;
+  // Return chocolate data
+  return generatedChocolateData;
 };

@@ -1,11 +1,11 @@
-import { generateDublinWeatherData, generateLondonWeatherData, generateParisWeatherData, generateMadridWeatherData, } from "../services/chocolateService.js";
+import { generateCadburyChocolateData, generateMarsChocolateData, generateGalaxyChocolateData, generateLindtChocolateData, } from "../services/chocolateService.js";
 import { validationResult } from "express-validator";
 /**
- * Gets the weather data for a city
+ * Gets the chocolate data for a chocolate
  * @param req the request object
  * @param res the response object
  */
-export const getWeatherData = async (req, res) => {
+export const getChocolateData = async (req, res) => {
     // We will use the validationResult function to check if there are any validation errors
     const errors = validationResult(req);
     // If there are validation errors, we will log them and send a 400 status code
@@ -16,40 +16,40 @@ export const getWeatherData = async (req, res) => {
     }
     // We will use a try catch block to catch any errors
     try {
-        // Get the city param from the request
-        const { city } = req.params;
-        console.log(city);
-        // We will create a variable with a type of WeatherData
-        let finalWeatherData;
-        // We will use an if statement to check which city was passed in
-        if (city === "london") {
-            console.log(generateLondonWeatherData());
-            finalWeatherData = generateLondonWeatherData();
+        // Get the chocolate param from the request
+        const { chocolate } = req.params;
+        console.log(chocolate);
+        // We will create a variable with a type of ChocolateData
+        let finalChocolateData;
+        // We will use an if statement to check which chocolate was passed in
+        if (chocolate === "london") {
+            console.log(generateCadburyChocolateData());
+            finalChocolateData = generateCadburyChocolateData();
         }
-        else if (city === "dublin") {
-            finalWeatherData = generateDublinWeatherData();
+        else if (chocolate === "mars") {
+            finalChocolateData = generateMarsChocolateData();
         }
-        else if (city === "paris") {
-            finalWeatherData = generateParisWeatherData();
+        else if (chocolate === "galaxy") {
+            finalChocolateData = generateGalaxyChocolateData();
         }
-        else if (city === "madrid") {
-            finalWeatherData = generateMadridWeatherData();
+        else if (chocolate === "lindt") {
+            finalChocolateData = generateLindtChocolateData();
         }
         else {
-            // If the city is not london or dublin, we will throw an error
-            res.status(404).send("City not found");
+            // If the chocolate is not in the statement, we will throw an error
+            res.status(404).send("Chocolate not found");
         }
-        // Check if finalWeatherData is undefined (in case no city matches)
-        if (finalWeatherData === undefined) {
-            throw new Error("Weather data not generated");
+        // Check if finalChocolateData is undefined (in case no chocolate matches)
+        if (finalChocolateData === undefined) {
+            throw new Error("Chocolate data not generated");
         }
-        // We will return the weather data as JSON
-        res.status(200).json(finalWeatherData);
+        // We will return the chocolate data as JSON
+        res.status(200).json(finalChocolateData);
     }
     catch (error) {
         // If there is an error, we will log it and send a 500 status code
-        console.error("Error in fetching weather data", error);
-        res.status(500).send("Error in fetching weather data");
+        console.error("Error in fetching chocolate data", error);
+        res.status(500).send("Error in fetching chocolate data");
     }
 };
 //# sourceMappingURL=chocolateController.js.map

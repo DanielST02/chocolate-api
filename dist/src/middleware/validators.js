@@ -1,19 +1,19 @@
 import { param } from "express-validator";
 /**
- * Validates the city name param
+ * Validates the chocolate name param
  * @returns {ValidationChain} - Express validator validation chain
  * @example
  * router.get(
- *  "/:city",
- * validateCityName,
- * getWeatherData
+ *  "/:chocolate",
+ * validateChocolateName,
+ * getChocolateData
  * );
  */
-export const validateCityName = param("city")
-    // We will use the isString method to check if the city param is a string
+export const validateChocolateName = param("chocolate")
+    // We will use the isString method to check if the chocolate param is a string
     .isString()
-    // We will use the isIn method to check if the city param is either london or dublin
-    .isIn(["london", "dublin", "paris", "madrid"])
+    // We will use the isIn method to check if the city param is either cadbury, mars, galaxy or lindt
+    .isIn(["cadbury", "mars", "galaxy", "lindt"])
     // We will use the withMessage method to set a custom error message
-    .withMessage("City name must be either london, dublin, paris or madrid");
+    .withMessage("Chocolate name must be either cadbury, mars, galaxy or lindt");
 //# sourceMappingURL=validators.js.map
