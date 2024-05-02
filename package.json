@@ -1,0 +1,26 @@
+{
+  "name": "chocolate_api",
+  "version": "1.0.0",
+  "description": "The Chocolate API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Daniel Stubbings",
+  "license": "ISC",
+  "dependencies": {
+    "-": "^0.0.1",
+    "@faker-js/faker": "^8.4.1",
+    "express": "^4.19.2",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.8",
+    "nodemon": "^3.1.0",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5"
+  }
+}
