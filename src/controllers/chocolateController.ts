@@ -33,7 +33,7 @@ export const getChocolateData = async (req: Request, res: Response) => {
     let finalChocolateData: ChocolateData | undefined;
 
     // We will use an if statement to check which chocolate was passed in
-    if (chocolate === "london") {
+    if (chocolate === "cadbury") {
       console.log(generateCadburyChocolateData());
       finalChocolateData = generateCadburyChocolateData();
     } else if (chocolate === "mars") {

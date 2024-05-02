@@ -22,7 +22,7 @@ export const getChocolateData = async (req, res) => {
         // We will create a variable with a type of ChocolateData
         let finalChocolateData;
         // We will use an if statement to check which chocolate was passed in
-        if (chocolate === "london") {
+        if (chocolate === "cadbury") {
             console.log(generateCadburyChocolateData());
             finalChocolateData = generateCadburyChocolateData();
         }
