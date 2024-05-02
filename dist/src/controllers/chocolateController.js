@@ -1,25 +1,13 @@
-"use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getWeatherData = void 0;
-const chocolateService_js_1 = require("../services/chocolateService.js");
-const express_validator_1 = require("express-validator");
+import { generateDublinWeatherData, generateLondonWeatherData, generateParisWeatherData, generateMadridWeatherData, } from "../services/chocolateService.js";
+import { validationResult } from "express-validator";
 /**
  * Gets the weather data for a city
  * @param req the request object
  * @param res the response object
  */
-const getWeatherData = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+export const getWeatherData = async (req, res) => {
     // We will use the validationResult function to check if there are any validation errors
-    const errors = (0, express_validator_1.validationResult)(req);
+    const errors = validationResult(req);
     // If there are validation errors, we will log them and send a 400 status code
     if (!errors.isEmpty()) {
         console.error("Validation error", errors.mapped());
@@ -35,17 +23,17 @@ const getWeatherData = (req, res) => __awaiter(void 0, void 0, void 0, function*
         let finalWeatherData;
         // We will use an if statement to check which city was passed in
         if (city === "london") {
-            console.log((0, chocolateService_js_1.generateLondonWeatherData)());
-            finalWeatherData = (0, chocolateService_js_1.generateLondonWeatherData)();
+            console.log(generateLondonWeatherData());
+            finalWeatherData = generateLondonWeatherData();
         }
         else if (city === "dublin") {
-            finalWeatherData = (0, chocolateService_js_1.generateDublinWeatherData)();
+            finalWeatherData = generateDublinWeatherData();
         }
         else if (city === "paris") {
-            finalWeatherData = (0, chocolateService_js_1.generateParisWeatherData)();
+            finalWeatherData = generateParisWeatherData();
         }
         else if (city === "madrid") {
-            finalWeatherData = (0, chocolateService_js_1.generateMadridWeatherData)();
+            finalWeatherData = generateMadridWeatherData();
         }
         else {
             // If the city is not london or dublin, we will throw an error
@@ -63,5 +51,5 @@ const getWeatherData = (req, res) => __awaiter(void 0, void 0, void 0, function*
         console.error("Error in fetching weather data", error);
         res.status(500).send("Error in fetching weather data");
     }
-});
-exports.getWeatherData = getWeatherData;
+};
+//# sourceMappingURL=chocolateController.js.map

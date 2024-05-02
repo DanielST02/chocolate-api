@@ -2,6 +2,10 @@
   "name": "chocolate_api",
   "version": "1.0.0",
   "description": "The Chocolate API program to store and fetch various instances of chocolate data",
+  "type": "module",
+  "engines": {
+    "node": ">= 18.12 <21"
+  },
   "scripts": {
     "start": "node dist/src/server.js",
     "dev": "nodemon dist/src/server.js",
@@ -25,6 +29,7 @@
     "@types/node": "^20.12.8",
     "nodemon": "^3.1.0",
     "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5"
