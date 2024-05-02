@@ -2,8 +2,12 @@
   "name": "chocolate_api",
   "version": "1.0.0",
   "description": "The Chocolate API program to store and fetch various instances of chocolate data",
-  "main": "index.js",
   "scripts": {
+    "start": "node dist/src/server.js",
+    "dev": "nodemon dist/src/server.js",
+    "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -w -p tsconfig.json",
+    "dev:start": "nodemon dist/src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,6 +17,7 @@
     "-": "^0.0.1",
     "@faker-js/faker": "^8.4.1",
     "express": "^4.19.2",
+    "express-validator": "^7.0.1",
     "validator": "^13.11.0"
   },
   "devDependencies": {
